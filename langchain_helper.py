@@ -10,7 +10,7 @@ def generate_pet_name(writing_type, theme, addons):
  
     prompt_template_name = PromptTemplate(
         input_variables = ['writing_type', 'theme', 'addons'],
-        template = "I want to write {writing_type} on {theme}.suggest me {addons} for this. Tell in few lines."
+        template = "I want to write a {writing_type} on {theme}.suggest me {addons} for this. Tell in few lines."
     )
     name_chain = LLMChain(llm=llm, prompt = prompt_template_name,output_key = "res")
     response = name_chain({'writing_type': writing_type, 'theme': theme, 'addons': addons})
